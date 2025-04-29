@@ -4,6 +4,14 @@ import * as dotenv from 'dotenv'
 
 dotenv.config()
 
+process.on('unhandledRejection', (reason) => {
+  console.error('Unhandled Rejection:', reason);
+});
+
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception:', err);
+});
+
 const app = express()
 
 console.log('Initializing Express Server...')
@@ -14,7 +22,7 @@ app.use(express.json());
 console.log('Configuring CORS...')
 app.use(cors())
 
-function logError() {
+function logError(err) {
   if (err instanceof Error) {
     console.error(`${err.message}\n\n${err.stack}`)
   }
@@ -45,13 +53,14 @@ app.get('/message', async (req, res) => {
   }
 })
 
+console.log('Express Server Initialized!')
+
 // start express server
 const port = process.env.PORT || 3000
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)
 })
 
-console.log('Express Server Initialized!')
 
 
   
