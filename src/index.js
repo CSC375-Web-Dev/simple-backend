@@ -24,14 +24,14 @@ console.log('Initializing Express Server...')
 // }
 
 console.log('Defining endpoint GET /ping')
-app.get('/ping', (req, res) => {
-  //try {
+app.get('/ping', async (req, res) => {
+  try {
     res.status(200).json({ message: 'pong' })
-  //}
-  // catch(err) {
-  //   //logError(err)
-  //   res.status(500).json({ error: 'something went wrong' })
-  // }
+  }
+  catch(err) {
+    //logError(err)
+    res.status(500).json({ error: 'something went wrong' })
+  }
 })
 
 // console.log('Defining endpoint GET /message')
