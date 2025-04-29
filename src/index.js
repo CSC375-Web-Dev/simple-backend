@@ -1,26 +1,18 @@
 import express from 'express'
-import cors from 'cors'
-import * as dotenv from 'dotenv'
+// import cors from 'cors'
+// import * as dotenv from 'dotenv'
 
-dotenv.config()
-
-process.on('unhandledRejection', (reason) => {
-  console.error('Unhandled Rejection:', reason);
-});
-
-process.on('uncaughtException', (err) => {
-  console.error('Uncaught Exception:', err);
-});
+// dotenv.config()
 
 const app = express()
 
 console.log('Initializing Express Server...')
 
-// middleware to parse json
-app.use(express.json()); 
+// // middleware to parse json
+// app.use(express.json()); 
 
-console.log('Configuring CORS...')
-app.use(cors())
+// console.log('Configuring CORS...')
+// app.use(cors())
 
 function logError(err) {
   if (err instanceof Error) {
