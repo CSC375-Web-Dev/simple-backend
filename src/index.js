@@ -29,7 +29,7 @@ app.get('/ping', async (req, res) => {
     return res.status(200).json({ message: 'pong' })
   }
   catch(err) {
-    //logError(err)
+    logError(err)
     return res.status(500).json({ error: 'something went wrong' })
   }
 })
@@ -40,7 +40,7 @@ app.get('/message', async (req, res) => {
     return res.status(200).json({ message: process.env.message })
   }
   catch(err) {
-    //logError(err)
+    logError(err)
     return res.status(500).json({ error: 'something went wrong' })
   }
 })
