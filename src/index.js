@@ -25,24 +25,24 @@ function logError(err) {
 
 console.log('Defining endpoint GET /ping')
 app.get('/ping', async (req, res) => {
-  //try {
+  try {
     return res.status(200).json({ message: 'pong' })
-  //}
-  //catch(err) {
+  }
+  catch(err) {
     //logError(err)
-    //return res.status(500).json({ error: 'something went wrong' })
-  //}
+    return res.status(500).json({ error: 'something went wrong' })
+  }
 })
 
 console.log('Defining endpoint GET /message')
 app.get('/message', async (req, res) => {
-  //try {
+  try {
     return res.status(200).json({ message: process.env.message })
-  //}
-  //catch(err) {
-   // logError(err)
-  //  return res.status(500).json({ error: 'something went wrong' })
-  //}
+  }
+  catch(err) {
+    //logError(err)
+    return res.status(500).json({ error: 'something went wrong' })
+  }
 })
 
 console.log('Express Server Initialized!')
