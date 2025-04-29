@@ -14,14 +14,14 @@ console.log('Initializing Express Server...')
 // console.log('Configuring CORS...')
 // app.use(cors())
 
-function logError(err) {
-  if (err instanceof Error) {
-    console.error(`${err.message}\n\n${err.stack}`)
-  }
-  else {
-    console.error(`ERROR: ${err}`)
-  }
-}
+// function logError(err) {
+//   if (err instanceof Error) {
+//     console.error(`${err.message}\n\n${err.stack}`)
+//   }
+//   else {
+//     console.error(`ERROR: ${err}`)
+//   }
+// }
 
 console.log('Defining endpoint GET /ping')
 app.get('/ping', async (req, res) => {
@@ -29,7 +29,7 @@ app.get('/ping', async (req, res) => {
     return res.status(200).json({ message: 'pong' })
   }
   catch(err) {
-    logError(err)
+    //logError(err)
     return res.status(500).json({ error: 'something went wrong' })
   }
 })
@@ -40,7 +40,7 @@ app.get('/message', async (req, res) => {
     return res.status(200).json({ message: process.env.message })
   }
   catch(err) {
-    logError(err)
+    //logError(err)
     return res.status(500).json({ error: 'something went wrong' })
   }
 })
