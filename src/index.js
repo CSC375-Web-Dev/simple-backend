@@ -25,25 +25,25 @@ console.log('Initializing Express Server...')
 
 console.log('Defining endpoint GET /ping')
 app.get('/ping', (req, res) => {
-  try {
+  //try {
     res.status(200).json({ message: 'pong' })
-  }
-  catch(err) {
-    //logError(err)
-    res.status(500).json({ error: 'something went wrong' })
-  }
+  //}
+  // catch(err) {
+  //   //logError(err)
+  //   res.status(500).json({ error: 'something went wrong' })
+  // }
 })
 
-console.log('Defining endpoint GET /message')
-app.get('/message', (req, res) => {
-  try {
-    res.status(200).json({ message: process.env.message })
-  }
-  catch(err) {
-    //logError(err)
-    res.status(500).json({ error: 'something went wrong' })
-  }
-})
+// console.log('Defining endpoint GET /message')
+// app.get('/message', (req, res) => {
+//   try {
+//     res.status(200).json({ message: process.env.message })
+//   }
+//   catch(err) {
+//     //logError(err)
+//     res.status(500).json({ error: 'something went wrong' })
+//   }
+// })
 
 console.log('Express Server Initialized!')
 
