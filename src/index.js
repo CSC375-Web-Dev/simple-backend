@@ -6,11 +6,11 @@ dotenv.config()
 
 const app = express()
 
-const main = async () => {
+async function main() {
   await initializeServer()
 }
   
-const initializeServer = async () => {
+async function initializeServer() {
   console.log('Initializing Express Server...')
   
   // middleware to parse json
