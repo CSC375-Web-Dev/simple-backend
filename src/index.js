@@ -37,7 +37,7 @@ app.get('/ping', async (req, res) => {
 console.log('Defining endpoint GET /message')
 app.get('/message', async (req, res) => {
   try {
-    return res.status(200).json({ message: process.env.message })
+    return res.status(200).json({ message: process.env.MESSAGE })
   }
   catch(err) {
     logError(err)
