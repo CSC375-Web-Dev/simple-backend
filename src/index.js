@@ -5,7 +5,6 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 const app = express()
-const port = 3000
 
 const main = async () => {
   await initializeServer()
@@ -52,7 +51,7 @@ const initializeServer = async () => {
   })
 
   // start express server
-  app.listen(port, () => {
+  app.listen(process.env.PORT || 3000, () => {
     console.log(`Listening on port ${port}`)
   })
 
