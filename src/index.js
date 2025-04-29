@@ -24,24 +24,24 @@ console.log('Initializing Express Server...')
 // }
 
 console.log('Defining endpoint GET /ping')
-app.get('/ping', async (req, res) => {
+app.get('/ping', (req, res) => {
   try {
-    return res.status(200).json({ message: 'pong' })
+    res.status(200).json({ message: 'pong' })
   }
   catch(err) {
     //logError(err)
-    return res.status(500).json({ error: 'something went wrong' })
+    res.status(500).json({ error: 'something went wrong' })
   }
 })
 
 console.log('Defining endpoint GET /message')
-app.get('/message', async (req, res) => {
+app.get('/message', (req, res) => {
   try {
-    return res.status(200).json({ message: process.env.message })
+    res.status(200).json({ message: process.env.message })
   }
   catch(err) {
     //logError(err)
-    return res.status(500).json({ error: 'something went wrong' })
+    res.status(500).json({ error: 'something went wrong' })
   }
 })
 
@@ -49,6 +49,7 @@ console.log('Express Server Initialized!')
 
 // start express server
 const port = process.env.PORT || 3000
+console.log(`Using port ${port}`)
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)
 })
